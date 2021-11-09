@@ -17,6 +17,7 @@ from experiments import vanderheijden1999
 from matplotlib.gridspec import GridSpec
 import matplotlib.pyplot as plt
 
+plt.ioff()
 # Create a 3x3 raster to contain the plots
 fig = plt.figure(figsize=(15, 8))
 gs = GridSpec(3, 3, bottom=0.07, top=0.95, left=0.07, right=0.98,
@@ -31,3 +32,5 @@ langford1964.plot(sub_gs[4])
 robinson1963.plot(sub_gs[5])
 vandepar1999.plot(sub_gs[6])
 vanderheijden1999.plot(sub_gs[7])
+
+plt.show()

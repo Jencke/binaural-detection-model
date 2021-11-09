@@ -3,7 +3,7 @@ from ..model import find_snr
 import numpy as np
 import pandas as pds
 import os
-import audiotools as audio
+from ..model_helpers import band2rms
 
 
 def calc(rho_hat=0.92, bin_noise=0.31, mon_noise=0.76, calc=True,
@@ -18,7 +18,7 @@ def calc(rho_hat=0.92, bin_noise=0.31, mon_noise=0.76, calc=True,
 
     rel_tone_level = 69.2           # dB
     noise_band_level = 50           # dB
-    noise_level = audio.band2rms(noise_band_level, bw)
+    noise_level = band2rms(noise_band_level, bw)
 
     path, _ = os.path.split(__file__)
     file = os.path.join(path, 'exp_data.csv')

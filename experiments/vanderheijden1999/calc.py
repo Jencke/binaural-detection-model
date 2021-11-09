@@ -3,7 +3,7 @@ from ..model import find_snr
 import numpy as np
 import os
 import pandas as pds
-import audiotools as audio
+from ..model_helpers import band2rms
 
 
 def calc(rho_hat=0.90, bin_noise=0.19, mon_noise=0.61, calc=True,
@@ -87,7 +87,7 @@ def calc(rho_hat=0.90, bin_noise=0.19, mon_noise=0.61, calc=True,
                                          target_param=t_param,
                                          reference_param=r_param,
                                          ftol=ftol)
-    noise_level = audio.band2rms(n_band_level, bw)
+    noise_level = band2rms(n_band_level, bw)
 
     n_tau_s_0_model = pds.DataFrame({'tau': tau_vals,
                                      'SNR': 10 * np.log10(snr_n_tau_s_0),

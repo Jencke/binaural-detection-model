@@ -2,9 +2,9 @@
 import numpy as np
 import pandas as pds
 import os
-import audiotools as audio
 
 from ..model import find_snr
+from ..model_helpers import band2rms
 
 
 def calc(rho_hat=0.95, bin_noise=0.33, mon_noise=0.70, calc=True,
@@ -23,7 +23,7 @@ def calc(rho_hat=0.95, bin_noise=0.33, mon_noise=0.70, calc=True,
 
     rel_tone_level = 69.2           # dB
     noise_band_level = 50                # dB
-    noise_level = audio.band2rms(noise_band_level, bw)
+    noise_level = band2rms(noise_band_level, bw)
     exp_data['Spi'] = rel_tone_level - exp_data['Spi']
     exp_data['S0'] = rel_tone_level - exp_data['S0']
     exp_data['Spi'] -= noise_level
