@@ -1,4 +1,5 @@
 """Some helper functions for the model."""
+import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpecFromSubplotSpec
 
@@ -44,8 +45,27 @@ def calc_bandwidth(fc, scale='cbw'):
 
     return bw
 
+
+def band2rms(bandlevel, bw):
+    r"""Convert bandlevel to rms level
+
+    Assuming a white spectrum, this functions converts a Bandlevel in
+    dB/sqrt(Hz) into the corresponding RMS levle in dB
+
+    ..math:: L_{rms} = L_{band} + 10 \log_10(f_\delta)
+
+    where :math:`f_\delta` is the bandwidth of the signal
+    """
+
+    rmslevel = bandlevel + 10 * np.log10(bw)
+
+    return rmslevel
+
+
 def create_figure():
-    fig = plt.figure(figsize=(4, 3))
+    """Template to crate an empty figure."""
+
+    plt.figure(figsize=(4, 3))
     main_gs = plt.GridSpec(1, 1, left=0.2, right=0.98, bottom=0.22, top=0.82)
     gs = GridSpecFromSubplotSpec(1, 1, main_gs[0])
     return gs[0]
