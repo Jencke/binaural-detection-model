@@ -21,9 +21,11 @@ def plot(gridspec=None, file='data.h5', marker='o'):
     ax.plot(f, -3 * np.log2(f) + 16.5, ':', color='k')
     ax.text(15, -1, r'-1.5\,dB/oct', fontsize=6, rotation=-11)
     ax.text(200, -9.4, r'-3\,dB/oct', fontsize=6, rotation=-20)
+    # ax.legend(np.asarray(ax.lines)[[2, 4, 0]],
+    #           [r'$N_0 S_{\pi}$', r'$N_{\pi} S_{0}$', r'$N_{0} S_{0}$'],
+    #           handlelength=1, ncol=3, loc=(-0.08, 1), columnspacing=1)
     ax.legend(np.asarray(ax.lines)[[2, 4, 0]],
-              [r'$N_0 S_{\pi}$', r'$N_{\pi} S_{0}$', r'$N_{0} S_{0}$'],
-              handlelength=1, ncol=3, loc=(-0.08, 1), columnspacing=1)
+              [r'$N_0 S_{\pi}$', r'$N_{\pi} S_{0}$', r'$N_{0} S_{0}$'])
     ax.set_xscale('log')
     ax.set_ylim(-30, 5)
     ax.yaxis.set_major_locator(plt.MultipleLocator(5))

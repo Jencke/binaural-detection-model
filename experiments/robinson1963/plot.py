@@ -24,8 +24,9 @@ def plot(gridspec=None, file='data.h5', marker='o'):
     ax.xaxis.set_minor_locator(plt.MultipleLocator(0.25))
     ax.set_xlabel(r'$\rho$')
     ax.set_ylabel('SNR / dB')
-    ax.legend(ax.get_lines()[::2], [r'$N_\rho S_0$', r'$N_\rho S_\pi$'],
-              handlelength=1, loc=(0.15, 1), ncol=3,
-              columnspacing=1)
+    # ax.legend(ax.get_lines()[::2], [r'$N_\rho S_0$', r'$N_\rho S_\pi$'],
+    #           handlelength=1, loc=(0.15, 1), ncol=3,
+    #           columnspacing=1)
+    ax.legend()
     ax.set_title('Robinson \& Jeffress, 1963', pad=15)
     return ax

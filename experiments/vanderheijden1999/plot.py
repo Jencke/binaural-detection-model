@@ -46,6 +46,8 @@ def plot(gridspec=None, file='data.h5', marker='o'):
     ax[0].set_xticklabels([])
     ax[1].set_xlabel('$\Delta t$ / ms')
     ax[0].set_title('van der Heijden \& Trahiotis 1999', pad=15)
-    ax[0].legend(handlelength=1, loc=(0.07, 0.95), ncol=2)
-    ax[1].legend(handlelength=1, loc=(0.07, 0.9), ncol=2)
+    # ax[0].legend(handlelength=1, loc=(0.07, 0.95), ncol=2)
+    # ax[1].legend(handlelength=1, loc=(0.07, 0.9), ncol=2)
+    ax[0].legend()
+    ax[1].legend()
     return ax

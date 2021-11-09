@@ -37,7 +37,8 @@ def plot(gridspec=None, file='data.h5', marker='o'):
     ax.yaxis.set_minor_locator(plt.MultipleLocator(2.5))
     ax.set_xlabel(r'$\rho$')
     ax.set_ylabel('SNR / dB')
-    ax.legend(ncol=4, handlelength=0.8, columnspacing=0.8,
-              loc =(-0.27, 1), handletextpad=0.5)
+    ax.legend()
+    # ax.legend(ncol=4, handlelength=0.8, columnspacing=0.8,
+    #           loc =(-0.27, 1), handletextpad=0.5)
     ax.set_title('Bernstein \& Trahiotis, 2014', pad=15)
     return ax

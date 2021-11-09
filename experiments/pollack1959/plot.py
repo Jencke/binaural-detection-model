@@ -17,9 +17,9 @@ def plot(gridspec=None, file='data.h5', marker='o'):
         # p = plt.plot(mod_data['corr'], jnd)
         plt.plot(exp_data['corr'], exp_data.jnd, marker=marker,
                  ls='', color=p[0].get_color())
-    # ax.legend(handlelength=1, ncol=3, )
-    ax.legend(handlelength=1, loc=(-0.25, 1), ncol=3,
-              columnspacing=1)
+    ax.legend()
+    # ax.legend(handlelength=1, loc=(-0.25, 1), ncol=3,
+    #           columnspacing=1)
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(0.02, 1)
     ax.set_yscale('log')

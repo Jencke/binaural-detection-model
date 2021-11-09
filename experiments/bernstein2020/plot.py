@@ -48,7 +48,8 @@ def plot(gridspec=None, file='data.h5', marker='o'):
     ax[0].set_xticklabels([])
     ax[1].set_xlabel('$\Delta t$ / ms')
     ax[0].set_title('Bernstein \& Trahiotis 2020', pad=15)
-    ax[0].legend(ncol=4, handlelength=0.8, columnspacing=0.8,
-              loc =(-0.27, 1), handletextpad=0.5)
+    ax[0].legend()
+    # ax[0].legend(ncol=4, handlelength=0.8, columnspacing=0.8,
+    #           loc =(-0.27, 1), handletextpad=0.5)
     # ax[1].legend(handlelength=1, loc=(0.07, 0.9), ncol=2)
     return ax
